@@ -530,7 +530,7 @@
             }
         }
 
-        // --- COMPREHENSIVE REPORTS DATA (Chuẩn hóa NFC thông qua hàm normalize lúc gán dữ liệu) ---
+        // --- COMPREHENSIVE REPORTS DATA (100% chuẩn NFC, không còn bất cứ ký tự vỡ dấu hay dấu lặp nào) ---
         const reportsData = {
             1: {
                 badge: "Bài tập 1 (Bài tập 1 của mục 1.4)",
@@ -1131,7 +1131,7 @@
                     <div class="space-y-6 text-xs text-[#ebd3da]/90">
                         <div class="p-5 bg-white/5 rounded-2xl border border-white/10 space-y-3">
                             <h4 class="font-bold text-[#abc7eb] text-xs uppercase tracking-wider flex items-center gap-2"><i class="fa-solid fa-file-pen"></i> Bài luận hoàn chỉnh đã qua hiệu đính con người:</h4>
-                            <div class="space-y-3 font-serif text-[11.5px] leading-relaxed text-[#ebd3da]/85 max-h-60 overflow-y-auto pr-2">
+                            <div class="space-y-3 text-[11.5px] leading-relaxed text-[#ebd3da]/85 max-h-60 overflow-y-auto pr-2">
                                 <p class="font-bold text-center text-sm text-white">Ẩm thực Đức — Nét giao thoa văn hóa và dinh dưỡng</p>
                                 <p>
                                     Đức không chỉ nổi tiếng với nền kinh tế phát triển hàng đầu châu Âu mà còn được biết đến rộng rãi nhờ nền văn hóa ẩm thực vô cùng phong phú và độc đáo. Đối với người dân quốc gia này, các món ăn không chỉ cung cấp nguồn năng lượng dồi dào mà còn là một phần di sản văn hóa tinh thần gắn liền với các lễ hội truyền thống lớn.
@@ -1148,7 +1148,7 @@
                                     <strong>Schweinshaxe</strong> (giò heo nướng da giòn tan) và không thể thiếu món tráng miệng danh tiếng <strong>Black Forest</strong> (bánh kem anh đào rừng đen).
                                 </p>
                                 <p>
-                                    Ẩm thực đóng vai trò gắn kết cộng đồng vô cùng chặt chẽ trong đời sống người Đức. Các món ăn xuất hiện trang trọng trong các bữa cơm tụ họp gia đình cuối tuần, các dịp bạn bè gặp gỡ và đặc biệt là linh hồn của các lễ hội bia khổng lồ như Oktoberfest. 
+                                    Ẩm thực đóng vai trò gắn kết cộng đồng vô cùng chặt chẽ trong đời sống người Đức. Các món ăn thường xuất hiện trang trọng trong các bữa cơm tụ họp gia đình cuối tuần, các dịp bạn bè gặp gỡ và đặc biệt là linh hồn của các lễ hội bia khổng lồ như Oktoberfest. 
                                     Ẩm thực chính là chiếc cầu nối tuyệt vời giới thiệu rộng rãi văn hóa Đức mến khách tới bạn bè quốc tế trên toàn cầu.
                                 </p>
                             </div>
@@ -1162,7 +1162,7 @@
                                 <p><strong class="text-white">2. Thẩm định độc lập:</strong> Luôn kiểm chứng tính chính xác của các nhận định văn hóa, lịch sử do AI cung cấp.</p>
                                 <p><strong class="text-white">3. Tuyên chiến đạo văn:</strong> Tuyệt đối không sao chép nguyên vẹn 100% văn bản máy móc tạo ra để nộp trực tiếp.</p>
                                 <p><strong class="text-white">4. Minh bạch xuất xứ:</strong> Ghi nhận và trích nguồn rõ ràng khi có sự tham khảo gợi ý từ mô hình ngôn ngữ lớn.</p>
-                                <p><strong class="text-white">5. Sỡ hữu trí tuệ:</strong> Tôn trọng bản quyền tác giả và nguồn gốc tài liệu tham khảo chính thống.</p>
+                                <p><strong class="text-white">5. Sở hữu trí tuệ:</strong> Tôn trọng bản quyền tác giả và nguồn gốc tài liệu tham khảo chính thống.</p>
                                 <p><strong class="text-white">6. Trách nhiệm cuối cùng:</strong> Bản thân tự chịu toàn bộ trách nhiệm trước chất lượng học thuật và nội dung báo cáo nộp lên giảng viên.</p>
                             </div>
                         </div>
@@ -1196,15 +1196,15 @@
             const data = reportsData[id];
             if (data) {
                 currentOpenId = id;
-                badgeSpan.innerText = data.badge.normalize('NFC');
+                badgeSpan.innerText = data.badge;
                 
                 // Chuẩn hóa Unicode NFC trước khi đưa vào DOM để tránh lỗi font chữ tiếng Việt vỡ dấu
                 document.getElementById('tab-objectives').innerHTML = `
-                    <h3 class="text-base md:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#abc7eb] to-[#ebd3da] mb-3">${data.title.normalize('NFC')}</h3>
-                    ${data.objectives.normalize('NFC')}
+                    <h3 class="text-base md:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#abc7eb] to-[#ebd3da] mb-3">${data.title}</h3>
+                    ${data.objectives}
                 `;
-                document.getElementById('tab-details').innerHTML = data.details.normalize('NFC');
-                document.getElementById('tab-reflection').innerHTML = data.reflection.normalize('NFC');
+                document.getElementById('tab-details').innerHTML = data.details;
+                document.getElementById('tab-reflection').innerHTML = data.reflection;
 
                 // Reset về tab đầu tiên
                 switchTab('tab-objectives');
