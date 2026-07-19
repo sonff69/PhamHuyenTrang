@@ -6,7 +6,7 @@
     <title>Phạm Huyền Trang - Digital Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts hỗ trợ hiển thị tiếng Việt hoàn hảo -->
+    <!-- Google Fonts hỗ trợ tiếng Việt chuẩn học thuật -->
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -27,7 +27,16 @@
             font-family: 'Lora', serif;
         }
 
-        /* Tối ưu hóa thanh cuộn */
+        /* Triệt để triệt tiêu lỗi tách dấu tiếng Việt do letter-spacing của Tailwind */
+        body, p, span, div, h1, h2, h3, h4, h5, h6, td, th, li, a, button {
+            letter-spacing: normal !important;
+            word-spacing: normal !important;
+            text-rendering: optimizeLegibility !important;
+            -webkit-font-smoothing: antialiased !important;
+            -moz-osx-font-smoothing: grayscale !important;
+        }
+
+        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -64,7 +73,7 @@
             transform: translateY(-6px);
         }
 
-        /* Sao lấp lánh và trôi nhẹ */
+        /* Float animation cho các vì sao */
         @keyframes floatSlow {
             0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 0.45; }
             50% { transform: translateY(-15px) rotate(180deg) scale(1.1); opacity: 0.9; }
@@ -95,15 +104,15 @@
 </head>
 <body class="selection:bg-[#abc7eb] selection:text-[#170308]">
 
-    <!-- Canvas sinh hạt ánh sáng theo chuột -->
+    <!-- Canvas sinh hạt ánh sáng phát sáng bám theo chuột -->
     <canvas id="trail-canvas"></canvas>
 
-    <!-- Thanh tiến trình đọc -->
+    <!-- Thanh tiến trình đọc trên cùng -->
     <div class="fixed top-0 left-0 w-full h-1 bg-[#0d0104] z-50">
         <div id="scroll-progress" class="h-full bg-gradient-to-r from-[#abc7eb] via-[#d698a6] to-[#abc7eb] w-0 transition-all duration-75"></div>
     </div>
 
-    <!-- Các vì sao bay lung linh trên nền -->
+    <!-- Background Stars Deco -->
     <div class="absolute top-24 left-6 text-xl floating-star" style="animation-delay: 0s;"><i class="fa-solid fa-star"></i></div>
     <div class="absolute top-96 right-12 text-sm floating-star" style="animation-delay: 1.5s;"><i class="fa-solid fa-star"></i></div>
     <div class="absolute bottom-40 left-1/4 text-lg floating-star" style="animation-delay: 3s;"><i class="fa-solid fa-star"></i></div>
@@ -134,7 +143,7 @@
             </button>
         </div>
 
-        <!-- Mobile Menu -->
+        <!-- Mobile Menu Panel -->
         <div class="hidden absolute top-full left-0 w-full glass-panel py-6 px-8 flex flex-col gap-4 text-center md:hidden" id="mobile-menu">
             <a href="#about" class="hover:text-[#abc7eb] py-2 text-sm transition" onclick="toggleMenu()">Giới thiệu</a>
             <a href="#projects" class="hover:text-[#abc7eb] py-2 text-sm transition" onclick="toggleMenu()">Hành trình số</a>
@@ -227,7 +236,7 @@
             <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
                 <div class="space-y-4">
                     <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Bài tập 1 (Mục 1.4)</span>
+                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Nhiệm vụ 1 (Chương 1)</span>
                         <span class="w-7 h-7 rounded-full bg-[#abc7eb]/10 flex items-center justify-center text-xs text-[#abc7eb]"><i class="fa-regular fa-folder-open"></i></span>
                     </div>
                     <h3 class="text-sm font-bold text-white uppercase tracking-wider">Thao tác cơ bản với tệp tin và thư mục</h3>
@@ -244,7 +253,7 @@
             <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
                 <div class="space-y-4">
                     <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Bài tập 2 (Mục 2.4)</span>
+                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Nhiệm vụ 2 (Chương 2)</span>
                         <span class="w-7 h-7 rounded-full bg-[#abc7eb]/10 flex items-center justify-center text-xs text-[#abc7eb]"><i class="fa-solid fa-magnifying-glass-chart"></i></span>
                     </div>
                     <h3 class="text-sm font-bold text-white uppercase tracking-wider">Tìm kiếm và đánh giá thông tin học thuật</h3>
@@ -261,7 +270,7 @@
             <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
                 <div class="space-y-4">
                     <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Bài tập 3 (Mục 3.4)</span>
+                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Nhiệm vụ 3 (Chương 3)</span>
                         <span class="w-7 h-7 rounded-full bg-[#abc7eb]/10 flex items-center justify-center text-xs text-[#abc7eb]"><i class="fa-solid fa-keyboard"></i></span>
                     </div>
                     <h3 class="text-sm font-bold text-white uppercase tracking-wider">Viết Prompt hiệu quả cho các tác vụ học tập</h3>
@@ -278,10 +287,10 @@
             <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
                 <div class="space-y-4">
                     <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Bài tập 4 (Mục 4.4)</span>
+                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Nhiệm vụ 4 (Chương 4)</span>
                         <span class="w-7 h-7 rounded-full bg-[#abc7eb]/10 flex items-center justify-center text-xs text-[#abc7eb]"><i class="fa-solid fa-users-gear"></i></span>
                     </div>
-                    <h3 class="text-sm font-bold text-white uppercase tracking-wider">Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm</h3>
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider">Sử dụng công cụ hợp tác trực tuyến</h3>
                     <p class="text-[11px] text-[#ebd3da]/70 leading-relaxed line-clamp-3">
                         Dự án nhóm về ảnh hưởng của Fast Fashion đến sinh viên QH2025 Khoa Đức ULIS. Ứng dụng Google Sheets, Forms, Docs và Zalo.
                     </p>
@@ -295,10 +304,10 @@
             <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
                 <div class="space-y-4">
                     <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Bài tập 5 (Mục 5.4)</span>
+                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Nhiệm vụ 5 (Chương 5)</span>
                         <span class="w-7 h-7 rounded-full bg-[#abc7eb]/10 flex items-center justify-center text-xs text-[#abc7eb]"><i class="fa-solid fa-palette"></i></span>
                     </div>
-                    <h3 class="text-sm font-bold text-white uppercase tracking-wider">Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung</h3>
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider">Sử dụng AI tạo sinh sáng tạo nội dung</h3>
                     <p class="text-[11px] text-[#ebd3da]/70 leading-relaxed line-clamp-3">
                         Quy trình đồng sáng tạo giữa người và AI thiết kế Infographic "Vai trò của AI trong Giáo dục" qua ChatGPT, DALL-E và Canva.
                     </p>
@@ -312,10 +321,10 @@
             <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
                 <div class="space-y-4">
                     <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Bài tập 6 (Mục 6.4)</span>
+                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Nhiệm vụ 6 (Chương 6)</span>
                         <span class="w-7 h-7 rounded-full bg-[#abc7eb]/10 flex items-center justify-center text-xs text-[#abc7eb]"><i class="fa-solid fa-scale-balanced"></i></span>
                     </div>
-                    <h3 class="text-sm font-bold text-white uppercase tracking-wider">Sử dụng AI có trách nhiệm trong học tập và nghiên cứu</h3>
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider">Sử dụng AI có trách nhiệm</h3>
                     <p class="text-[11px] text-[#ebd3da]/70 leading-relaxed line-clamp-3">
                         Tiếp cận đề tài luận "Ẩm thực Đức" và xác lập bộ quy tắc ứng xử học thuật, bảo vệ tính trung thực nghiên cứu.
                     </p>
@@ -529,7 +538,7 @@
         // --- COMPREHENSIVE REPORTS DATA (Absolutely detailed, Visual diagrams mapped out) ---
         const reportsData = {
             1: {
-                badge: "Bài tập 1 (Mục 1.4)",
+                badge: "Bài tập 1 (Bài tập 1 của mục 1.4)",
                 title: "Thao tác cơ bản với tệp tin và thư mục",
                 objectives: `
                     <div class="space-y-4">
@@ -538,7 +547,7 @@
                                 <i class="fa-solid fa-compass"></i> Mục tiêu học tập
                             </h4>
                             <p class="text-[11px] text-[#ebd3da]/80 leading-relaxed">
-                                Xây dựng thói quen và tư duy lưu trữ dữ liệu học tập có hệ thống thông qua việc thao tác trực tiếp với tệp tin và thư mục trên môi trường Windows Explorer. 
+                                Làm chủ các kỹ năng thao tác cơ bản trên hệ điều hành Windows Explorer, thiết lập thói quen lưu trữ dữ liệu học tập có hệ thống và khoa học để chuẩn bị cho các dự án lớn trong toàn khóa học. 
                                 Nâng cao tính chuyên nghiệp, đảm bảo các tài nguyên học tập luôn được phân loại logic, tránh thất lạc khi tích hợp dự án số đám mây.
                             </p>
                         </div>
@@ -629,7 +638,7 @@
                 `
             },
             2: {
-                badge: "Bài tập 2 (Mục 2.4)",
+                badge: "Bài tập 2 (Bài tập 2 của mục 2.4)",
                 title: "Tìm kiếm và đánh giá thông tin học thuật",
                 objectives: `
                     <div class="space-y-4">
@@ -784,7 +793,7 @@
                 `
             },
             3: {
-                badge: "Bài tập 3 (Mục 3.4)",
+                badge: "Bài tập 3 (Bài tập 2 của mục 3.4)",
                 title: "Viết Prompt hiệu quả cho các tác vụ học tập",
                 objectives: `
                     <div class="space-y-4">
@@ -806,7 +815,7 @@
                             
                             <!-- Tác vụ 1 -->
                             <div class="p-4 bg-white/5 rounded-xl border border-[#abc7eb]/20 space-y-3">
-                                <span class="text-[10px] font-bold text-[#abc7eb] uppercase bg-[#abc7eb]/10 px-2 py-0.5 rounded">Tác vụ 1: Tóm tắt bài đọc đô thị Đan Mạch / Cape Town</span>
+                                <span class="text-[10px] font-bold text-[#abc7eb] uppercase bg-[#abc7eb]/10 px-2 py-0.5 rounded">Tác vụ 1: Tóm tắt bài đọc học thuật về quản lý nước đô thị (Danish/Copenhagen)</span>
                                 <div class="bg-black/30 p-3 rounded-lg font-mono text-[9px] text-[#ebd3da]/60">
                                     "Confronting the fragility of urban water systems, a new report released prior to the International Water Association's World Water Congress articulates a necessary evolution in municipal strategy. Drawing on case studies from Danish municipalities to global hubs like Cape Town, the findings advocate for dismantling the siloed approach to water management..."
                                 </div>
@@ -831,7 +840,7 @@
 
                             <!-- Tác vụ 2 -->
                             <div class="p-4 bg-white/5 rounded-xl border border-[#abc7eb]/20 space-y-3">
-                                <span class="text-[10px] font-bold text-[#abc7eb] uppercase bg-[#abc7eb]/10 px-2 py-0.5 rounded">Tác vụ 2: Giải thích khái niệm "Environmental Injustice" / "Brownwashing"</span>
+                                <span class="text-[10px] font-bold text-[#abc7eb] uppercase bg-[#abc7eb]/10 px-2 py-0.5 rounded">Tác vụ 2: Giải thích khái niệm phức tạp ("Environmental Injustice" / "Brownwashing")</span>
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-[11px]">
                                     <div class="p-2 bg-red-900/10 rounded border border-red-500/20">
                                         <p class="font-bold text-red-300">Prompt Cơ bản</p>
@@ -935,7 +944,7 @@
                 `
             },
             4: {
-                badge: "Bài tập 4 (Mục 4.4)",
+                badge: "Bài tập 3 (Bài tập 3 của mục 4.4)",
                 title: "Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm",
                 objectives: `
                     <div class="space-y-4">
@@ -1029,7 +1038,7 @@
                 `
             },
             5: {
-                badge: "Bài tập 5 (Mục 5.4)",
+                badge: "Bài tập 5 (Bài tập 2 của mục 5.4)",
                 title: "Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung",
                 objectives: `
                     <div class="space-y-4">
@@ -1039,7 +1048,7 @@
                             </h4>
                             <p class="text-[11px] text-[#ebd3da]/80 leading-relaxed">
                                 Đề tài dự án: <strong class="text-[#abc7eb]">Thiết kế Infographic "Vai trò của AI trong giáo dục"</strong>. 
-                                Sứ mệnh cá nhân là thử nghiệm và khai thác năng lực phối hợp đồng sáng tạo thông minh giữa bộ óc con người và 3 công cụ GenAI hàng đầu.
+                                Sứ mệnh cá nhân là thử nghiệm và khai thác năng lực phối hợp đồng sáng tạo thông minh giữa bộ óc con người và 3 công cụ trí tuệ nhân tạo (ChatGPT, DALL-E, Canva AI) nhằm tối ưu hóa 75% tốc độ sản xuất nội dung số.
                             </p>
                         </div>
                     </div>
@@ -1108,7 +1117,7 @@
                 `
             },
             6: {
-                badge: "Bài tập 6 (Mục 6.4)",
+                badge: "Bài tập 4 (Bài tập 4 của mục 6.4)",
                 title: "Sử dụng AI có trách nhiệm trong học tập và nghiên cứu",
                 objectives: `
                     <div class="space-y-4">
@@ -1158,7 +1167,7 @@
                                 <p><strong class="text-white">2. Thẩm định độc lập:</strong> Luôn kiểm chứng tính chính xác của các nhận định văn hóa, lịch sử do AI cung cấp.</p>
                                 <p><strong class="text-white">3. Tuyên chiến đạo văn:</strong> Tuyệt đối không sao chép nguyên vẹn 100% văn bản máy móc tạo ra để nộp trực tiếp.</p>
                                 <p><strong class="text-white">4. Minh bạch xuất xứ:</strong> Ghi nhận và trích nguồn rõ ràng khi có sự tham khảo gợi ý từ mô hình ngôn ngữ lớn.</p>
-                                <p><strong class="text-white">5. SỞ hữu trí tuệ:</strong> Tôn trọng bản quyền tác giả và nguồn gốc tài liệu tham khảo chính thống.</p>
+                                <p><strong class="text-white">5. Sở hữu trí tuệ:</strong> Tôn trọng bản quyền tác giả và nguồn gốc tài liệu tham khảo chính thống.</p>
                                 <p><strong class="text-white">6. Trách nhiệm cuối cùng:</strong> Bản thân tự chịu toàn bộ trách nhiệm trước chất lượng học thuật và nội dung báo cáo nộp lên giảng viên.</p>
                             </div>
                         </div>
@@ -1205,6 +1214,9 @@
                 // Reset về tab đầu tiên
                 switchTab('tab-objectives');
 
+                // Chạy hàm chuẩn hóa văn bản tổ hợp NFC ngay khi render dữ liệu vào DOM
+                normalizeVietnameseText(document.getElementById('modal-body-container'));
+
                 modal.classList.remove('hidden');
                 setTimeout(() => {
                     modalContent.classList.remove('scale-95', 'opacity-0');
@@ -1248,10 +1260,22 @@
             });
         }
 
-        // --- CHUẨN HÓA NFC CHỐNG LỖI BỂ FONT TIẾNG VIỆT (TỔ HỢP) ---
+        // --- HÀM CHUẨN HÓA TOÀN BỘ CHỮ SANG UNICODE TỔ HỢP (NFC) ---
+        // Hàm đệ quy duyệt qua các Text Nodes trong DOM và ép về định dạng NFC chuẩn
+        // Giúp khắc phục triệt để lỗi tách dấu của trình duyệt khi gặp văn bản Copy từ PDF/macOS.
+        function normalizeVietnameseText(node) {
+            if (node.nodeType === Node.TEXT_NODE) {
+                node.nodeValue = node.nodeValue.normalize('NFC');
+            } else {
+                for (let child of node.childNodes) {
+                    normalizeVietnameseText(child);
+                }
+            }
+        }
+
+        // Chạy chuẩn hóa tự động toàn bộ trang web khi tải xong
         document.addEventListener("DOMContentLoaded", () => {
-            // Thực hiện chuẩn hóa Unicode dựng sẵn (NFC) ngay lập tức trên toàn bộ DOM body trước khi render
-            document.body.innerHTML = document.body.innerHTML.normalize('NFC');
+            normalizeVietnameseText(document.body);
         });
     </script>
 </body>
