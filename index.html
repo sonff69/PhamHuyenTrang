@@ -6,14 +6,14 @@
     <title>Phạm Huyền Trang - Digital Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts hỗ trợ tiếng Việt tối ưu nhất, không bị lỗi dấu phức tạp -->
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Google Fonts hỗ trợ hiển thị tiếng Việt hoàn hảo -->
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         body {
-            font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Be Vietnam Pro', sans-serif;
             background-color: #170308;
             background-image: linear-gradient(135deg, rgba(28, 4, 10, 0.97) 0%, rgba(13, 1, 4, 0.99) 100%), url('back.jpg');
             background-size: cover;
@@ -21,6 +21,10 @@
             background-position: center;
             color: #ebd3da;
             overflow-x: hidden;
+        }
+
+        h1, h2, h3, .font-serif {
+            font-family: 'Lora', serif;
         }
 
         /* Tối ưu hóa thanh cuộn */
@@ -109,13 +113,13 @@
     <!-- Header / Navigation -->
     <header class="sticky top-0 z-40 w-full px-6 py-4 transition-all duration-300" id="main-header">
         <div class="max-w-6xl mx-auto flex items-center justify-between">
-            <a href="#" class="text-base font-extrabold tracking-wider text-[#abc7eb] flex items-center gap-2">
+            <a href="#" class="text-lg font-bold tracking-wider text-[#abc7eb] flex items-center gap-2">
                 <i class="fa-solid fa-wand-magic-sparkles text-sm"></i>
                 HuyenTrang.
             </a>
             
             <!-- Desktop Menu -->
-            <nav class="hidden md:flex items-center gap-8 text-[11px] font-bold tracking-wide uppercase">
+            <nav class="hidden md:flex items-center gap-8 text-xs font-semibold tracking-wide uppercase">
                 <a href="#about" class="hover:text-[#abc7eb] transition">Giới thiệu</a>
                 <a href="#projects" class="hover:text-[#abc7eb] transition">Hành trình số</a>
                 <a href="#reflection" class="hover:text-[#abc7eb] transition">Tổng kết chung</a>
@@ -161,7 +165,7 @@
                 <span class="text-[10px] uppercase tracking-widest text-[#abc7eb] bg-[#abc7eb]/10 px-2.5 py-1 rounded-full border border-[#abc7eb]/20 font-bold inline-block">
                     Hồ sơ kỹ năng số
                 </span>
-                <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
+                <h1 class="text-3xl md:text-5xl font-bold leading-tight">
                     Xin chào, mình là <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#abc7eb] to-[#ebd3da]">Phạm Huyền Trang</span>
                 </h1>
                 <p class="text-xs md:text-sm text-[#ebd3da]/80 leading-relaxed">
@@ -223,7 +227,7 @@
             <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
                 <div class="space-y-4">
                     <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Nhiệm vụ 1 (Chương 1)</span>
+                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Bài tập 1 (Mục 1.4)</span>
                         <span class="w-7 h-7 rounded-full bg-[#abc7eb]/10 flex items-center justify-center text-xs text-[#abc7eb]"><i class="fa-regular fa-folder-open"></i></span>
                     </div>
                     <h3 class="text-sm font-bold text-white uppercase tracking-wider">Thao tác cơ bản với tệp tin và thư mục</h3>
@@ -240,7 +244,7 @@
             <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
                 <div class="space-y-4">
                     <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Nhiệm vụ 2 (Chương 2)</span>
+                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Bài tập 2 (Mục 2.4)</span>
                         <span class="w-7 h-7 rounded-full bg-[#abc7eb]/10 flex items-center justify-center text-xs text-[#abc7eb]"><i class="fa-solid fa-magnifying-glass-chart"></i></span>
                     </div>
                     <h3 class="text-sm font-bold text-white uppercase tracking-wider">Tìm kiếm và đánh giá thông tin học thuật</h3>
@@ -257,7 +261,7 @@
             <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
                 <div class="space-y-4">
                     <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Nhiệm vụ 3 (Chương 3)</span>
+                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Bài tập 3 (Mục 3.4)</span>
                         <span class="w-7 h-7 rounded-full bg-[#abc7eb]/10 flex items-center justify-center text-xs text-[#abc7eb]"><i class="fa-solid fa-keyboard"></i></span>
                     </div>
                     <h3 class="text-sm font-bold text-white uppercase tracking-wider">Viết Prompt hiệu quả cho các tác vụ học tập</h3>
@@ -274,10 +278,10 @@
             <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
                 <div class="space-y-4">
                     <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Nhiệm vụ 4 (Chương 4)</span>
+                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Bài tập 4 (Mục 4.4)</span>
                         <span class="w-7 h-7 rounded-full bg-[#abc7eb]/10 flex items-center justify-center text-xs text-[#abc7eb]"><i class="fa-solid fa-users-gear"></i></span>
                     </div>
-                    <h3 class="text-sm font-bold text-white uppercase tracking-wider">Sử dụng công cụ hợp tác trực tuyến</h3>
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider">Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm</h3>
                     <p class="text-[11px] text-[#ebd3da]/70 leading-relaxed line-clamp-3">
                         Dự án nhóm về ảnh hưởng của Fast Fashion đến sinh viên QH2025 Khoa Đức ULIS. Ứng dụng Google Sheets, Forms, Docs và Zalo.
                     </p>
@@ -291,10 +295,10 @@
             <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
                 <div class="space-y-4">
                     <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Nhiệm vụ 5 (Chương 5)</span>
+                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Bài tập 5 (Mục 5.4)</span>
                         <span class="w-7 h-7 rounded-full bg-[#abc7eb]/10 flex items-center justify-center text-xs text-[#abc7eb]"><i class="fa-solid fa-palette"></i></span>
                     </div>
-                    <h3 class="text-sm font-bold text-white uppercase tracking-wider">Sử dụng AI tạo sinh sáng tạo nội dung</h3>
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider">Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung</h3>
                     <p class="text-[11px] text-[#ebd3da]/70 leading-relaxed line-clamp-3">
                         Quy trình đồng sáng tạo giữa người và AI thiết kế Infographic "Vai trò của AI trong Giáo dục" qua ChatGPT, DALL-E và Canva.
                     </p>
@@ -308,10 +312,10 @@
             <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
                 <div class="space-y-4">
                     <div class="flex items-center justify-between">
-                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Nhiệm vụ 6 (Chương 6)</span>
+                        <span class="text-[10px] font-bold text-[#abc7eb]/80 uppercase">Bài tập 6 (Mục 6.4)</span>
                         <span class="w-7 h-7 rounded-full bg-[#abc7eb]/10 flex items-center justify-center text-xs text-[#abc7eb]"><i class="fa-solid fa-scale-balanced"></i></span>
                     </div>
-                    <h3 class="text-sm font-bold text-white uppercase tracking-wider">Sử dụng AI có trách nhiệm</h3>
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider">Sử dụng AI có trách nhiệm trong học tập và nghiên cứu</h3>
                     <p class="text-[11px] text-[#ebd3da]/70 leading-relaxed line-clamp-3">
                         Tiếp cận đề tài luận "Ẩm thực Đức" và xác lập bộ quy tắc ứng xử học thuật, bảo vệ tính trung thực nghiên cứu.
                     </p>
@@ -525,7 +529,7 @@
         // --- COMPREHENSIVE REPORTS DATA (Absolutely detailed, Visual diagrams mapped out) ---
         const reportsData = {
             1: {
-                badge: "Bài tập 1 (Bài tập 1 của mục 1.4)",
+                badge: "Bài tập 1 (Mục 1.4)",
                 title: "Thao tác cơ bản với tệp tin và thư mục",
                 objectives: `
                     <div class="space-y-4">
@@ -619,13 +623,13 @@
                         </div>
                         <div class="p-4 bg-white/5 rounded-xl border border-white/10">
                             <h4 class="font-bold text-[#abc7eb] text-xs uppercase tracking-wider mb-2"><i class="fa-solid fa-lightbulb"></i> Bài học tích lũy</h4>
-                            <p>Tổ chức lưu trữ dữ liệu khoa học ngay từ bước đầu tiên giúp tiết kiệm thời gian tìm kiếm tài liệu đáng kể. Một chiếc máy tính gọn gàng là nền tảng của một tư duy học tập có tổ chức.</p>
+                            <p>Tổ chức lưu trữ dữ liệu khoa học ngay từ bước đầu tiên giúp tiết kiệm thời gian tìm kiếm tài liệu đáng kể. Một cây thư mục khoa học giúp cải thiện hiệu suất nghiên cứu từ ngữ và tài liệu lên gấp nhiều lần.</p>
                         </div>
                     </div>
                 `
             },
             2: {
-                badge: "Bài tập 2 (Bài tập 2 của mục 2.4)",
+                badge: "Bài tập 2 (Mục 2.4)",
                 title: "Tìm kiếm và đánh giá thông tin học thuật",
                 objectives: `
                     <div class="space-y-4">
@@ -780,7 +784,7 @@
                 `
             },
             3: {
-                badge: "Bài tập 3 (Bài tập 2 của mục 3.4)",
+                badge: "Bài tập 3 (Mục 3.4)",
                 title: "Viết Prompt hiệu quả cho các tác vụ học tập",
                 objectives: `
                     <div class="space-y-4">
@@ -888,7 +892,7 @@
                                             <td class="p-2.5 font-bold">Role Prompting (Đóng vai)</td>
                                             <td class="p-2.5 text-red-400">Không thiết lập</td>
                                             <td class="p-2.5 text-red-400">Không thiết lập</td>
-                                            <td class="p-2.5 text-green-300 font-semibold">"Bạn là trợ lý học tập" / "Bạn là giáo viên"</td>
+                                            <td class="p-2.5 text-green-300 font-semibold">"Bạn là trợ giảng đại học" / "Bạn là giáo viên"</td>
                                         </tr>
                                         <tr>
                                             <td class="p-2.5 font-bold">Context (Bối cảnh học tập)</td>
@@ -931,7 +935,7 @@
                 `
             },
             4: {
-                badge: "Bài tập 3 (Bài tập 3 của mục 4.4)",
+                badge: "Bài tập 4 (Mục 4.4)",
                 title: "Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm",
                 objectives: `
                     <div class="space-y-4">
@@ -1025,7 +1029,7 @@
                 `
             },
             5: {
-                badge: "Bài tập 5 (Bài tập 2 của mục 5.4)",
+                badge: "Bài tập 5 (Mục 5.4)",
                 title: "Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung",
                 objectives: `
                     <div class="space-y-4">
@@ -1035,7 +1039,8 @@
                             </h4>
                             <p class="text-[11px] text-[#ebd3da]/80 leading-relaxed">
                                 Đề tài dự án: <strong class="text-[#abc7eb]">Thiết kế Infographic "Vai trò của AI trong giáo dục"</strong>. 
-                                Sứ mệnh cá nhân là thử nghiệm và khai thác năng lực phối hợp đồng sáng tạo thông minh giữa bộ óc con người và 3 công cụ trí tuệ nhân tạo (ChatGPT, DALL-E, Canva AI) nhằm tối ưu hóa 75% tốc độ sản xuất nội dung số.</p>
+                                Sứ mệnh cá nhân là thử nghiệm và khai thác năng lực phối hợp đồng sáng tạo thông minh giữa bộ óc con người và 3 công cụ GenAI hàng đầu.
+                            </p>
                         </div>
                     </div>
                 `,
@@ -1103,7 +1108,7 @@
                 `
             },
             6: {
-                badge: "Bài tập 4 (Bài tập 4 của mục 6.4)",
+                badge: "Bài tập 6 (Mục 6.4)",
                 title: "Sử dụng AI có trách nhiệm trong học tập và nghiên cứu",
                 objectives: `
                     <div class="space-y-4">
@@ -1128,7 +1133,7 @@
                                     Đức không chỉ nổi tiếng với nền kinh tế phát triển hàng đầu châu Âu mà còn được biết đến rộng rãi nhờ nền văn hóa ẩm thực vô cùng phong phú và độc đáo. Đối với người dân quốc gia này, các món ăn không chỉ cung cấp nguồn năng lượng dồi dào mà còn là một phần di sản văn hóa tinh thần gắn liền với các lễ hội truyền thống lớn.
                                 </p>
                                 <p>
-                                    Đặc điểm nổi trội nhất của ẩm thực Đức chính là sự đậm đà, giàu chất dinh dưỡng với nguyên liệu chủ đạo gồm thịt heo, bánh mì và khoai tây. Mỗi phân vùng địa lý lại sở hữu những món đặc đặc trưng riêng biệt.
+                                    Đặc điểm nổi trội nhất của ẩm thực Đức chính là sự đậm đà, giàu chất dinh dưỡng với nguyên liệu chủ đạo gồm thịt heo, bánh mì và khoai tây. Mỗi phân vùng địa lý lại sở hữu những món đặc sản đặc trưng riêng biệt.
                                 </p>
                                 <p>
                                     Một số món ăn biểu tượng làm nên tên tuổi ẩm thực Đức trên bản đồ thế giới bao gồm: 
@@ -1153,7 +1158,7 @@
                                 <p><strong class="text-white">2. Thẩm định độc lập:</strong> Luôn kiểm chứng tính chính xác của các nhận định văn hóa, lịch sử do AI cung cấp.</p>
                                 <p><strong class="text-white">3. Tuyên chiến đạo văn:</strong> Tuyệt đối không sao chép nguyên vẹn 100% văn bản máy móc tạo ra để nộp trực tiếp.</p>
                                 <p><strong class="text-white">4. Minh bạch xuất xứ:</strong> Ghi nhận và trích nguồn rõ ràng khi có sự tham khảo gợi ý từ mô hình ngôn ngữ lớn.</p>
-                                <p><strong class="text-white">5. Sở hữu trí tuệ:</strong> Tôn trọng bản quyền tác giả và nguồn gốc tài liệu tham khảo chính thống.</p>
+                                <p><strong class="text-white">5. SỞ hữu trí tuệ:</strong> Tôn trọng bản quyền tác giả và nguồn gốc tài liệu tham khảo chính thống.</p>
                                 <p><strong class="text-white">6. Trách nhiệm cuối cùng:</strong> Bản thân tự chịu toàn bộ trách nhiệm trước chất lượng học thuật và nội dung báo cáo nộp lên giảng viên.</p>
                             </div>
                         </div>
@@ -1242,6 +1247,12 @@
                 }
             });
         }
+
+        // --- CHUẨN HÓA NFC CHỐNG LỖI BỂ FONT TIẾNG VIỆT (TỔ HỢP) ---
+        document.addEventListener("DOMContentLoaded", () => {
+            // Thực hiện chuẩn hóa Unicode dựng sẵn (NFC) ngay lập tức trên toàn bộ DOM body trước khi render
+            document.body.innerHTML = document.body.innerHTML.normalize('NFC');
+        });
     </script>
 </body>
 </html>
