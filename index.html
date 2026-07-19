@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phạm Huyền Trang Portfolio</title>
+    <title>Phạm Huyền Trang - Digital Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts hỗ trợ tiếng Việt hoàn hảo -->
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Google Fonts hỗ trợ tiếng Việt tối ưu nhất, không bị lỗi dấu phức tạp -->
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         body {
-            font-family: 'Be Vietnam Pro', sans-serif;
+            font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: #170308;
             background-image: linear-gradient(135deg, rgba(28, 4, 10, 0.97) 0%, rgba(13, 1, 4, 0.99) 100%), url('back.jpg');
             background-size: cover;
@@ -21,10 +21,6 @@
             background-position: center;
             color: #ebd3da;
             overflow-x: hidden;
-        }
-
-        h1, h2, h3, .font-serif {
-            font-family: 'Playfair Display', serif;
         }
 
         /* Tối ưu hóa thanh cuộn */
@@ -113,13 +109,13 @@
     <!-- Header / Navigation -->
     <header class="sticky top-0 z-40 w-full px-6 py-4 transition-all duration-300" id="main-header">
         <div class="max-w-6xl mx-auto flex items-center justify-between">
-            <a href="#" class="text-lg font-bold tracking-wider text-[#abc7eb] flex items-center gap-2">
+            <a href="#" class="text-base font-extrabold tracking-wider text-[#abc7eb] flex items-center gap-2">
                 <i class="fa-solid fa-wand-magic-sparkles text-sm"></i>
                 HuyenTrang.
             </a>
             
             <!-- Desktop Menu -->
-            <nav class="hidden md:flex items-center gap-8 text-xs font-semibold tracking-wide uppercase">
+            <nav class="hidden md:flex items-center gap-8 text-[11px] font-bold tracking-wide uppercase">
                 <a href="#about" class="hover:text-[#abc7eb] transition">Giới thiệu</a>
                 <a href="#projects" class="hover:text-[#abc7eb] transition">Hành trình số</a>
                 <a href="#reflection" class="hover:text-[#abc7eb] transition">Tổng kết chung</a>
@@ -165,7 +161,7 @@
                 <span class="text-[10px] uppercase tracking-widest text-[#abc7eb] bg-[#abc7eb]/10 px-2.5 py-1 rounded-full border border-[#abc7eb]/20 font-bold inline-block">
                     Hồ sơ kỹ năng số
                 </span>
-                <h1 class="text-3xl md:text-5xl font-bold leading-tight">
+                <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
                     Xin chào, mình là <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#abc7eb] to-[#ebd3da]">Phạm Huyền Trang</span>
                 </h1>
                 <p class="text-xs md:text-sm text-[#ebd3da]/80 leading-relaxed">
@@ -623,7 +619,7 @@
                         </div>
                         <div class="p-4 bg-white/5 rounded-xl border border-white/10">
                             <h4 class="font-bold text-[#abc7eb] text-xs uppercase tracking-wider mb-2"><i class="fa-solid fa-lightbulb"></i> Bài học tích lũy</h4>
-                            <p>Quản lý tệp tin không chỉ đơn thuần là việc phân loại mà chính là việc duy trì kỷ luật sắp xếp. Một cây thư mục khoa học giúp cải thiện hiệu suất nghiên cứu từ ngữ và tài liệu lên gấp nhiều lần.</p>
+                            <p>Tổ chức lưu trữ dữ liệu khoa học ngay từ bước đầu tiên giúp tiết kiệm thời gian tìm kiếm tài liệu đáng kể. Một chiếc máy tính gọn gàng là nền tảng của một tư duy học tập có tổ chức.</p>
                         </div>
                     </div>
                 `
@@ -868,7 +864,7 @@
                                     <div class="p-2 bg-green-900/10 rounded border border-green-500/20">
                                         <p class="font-bold text-green-300">Prompt Nâng cao</p>
                                         <p class="text-[#ebd3da]/70">"Bạn là giáo viên tiếng Đức A2. Hãy tạo bộ ôn tập từ vựng chủ đề môi trường: 5 câu trắc nghiệm, 3 câu nối từ, 2 câu điền từ. Từ vựng thuộc nhóm: der Müll, recyceln, die Umwelt, Energie sparen. Định dạng: Câu hỏi, Đáp án, Giải thích ngắn."</p>
-                                        <p class="text-[10px] text-[#ebd3da]/40 italic mt-1">Kết quả: Chất lượng xuất sắc, sát sườn thực tế, hỗ trợ tự học hiệu quả.</p>
+                                        <p class="text-[10px] text-[#ebd3da]/40 italic mt-1">Kết quả: Bộ tài liệu học tập tối ưu, chuẩn sư phạm, rất thực tế.</p>
                                     </div>
                                 </div>
                             </div>
@@ -892,7 +888,7 @@
                                             <td class="p-2.5 font-bold">Role Prompting (Đóng vai)</td>
                                             <td class="p-2.5 text-red-400">Không thiết lập</td>
                                             <td class="p-2.5 text-red-400">Không thiết lập</td>
-                                            <td class="p-2.5 text-green-300 font-semibold">"Bạn là trợ giảng đại học" / "Bạn là giáo viên"</td>
+                                            <td class="p-2.5 text-green-300 font-semibold">"Bạn là trợ lý học tập" / "Bạn là giáo viên"</td>
                                         </tr>
                                         <tr>
                                             <td class="p-2.5 font-bold">Context (Bối cảnh học tập)</td>
@@ -1039,8 +1035,7 @@
                             </h4>
                             <p class="text-[11px] text-[#ebd3da]/80 leading-relaxed">
                                 Đề tài dự án: <strong class="text-[#abc7eb]">Thiết kế Infographic "Vai trò của AI trong giáo dục"</strong>. 
-                                Sứ mệnh cá nhân là thử nghiệm và khai thác năng lực phối hợp đồng sáng tạo thông minh giữa bộ óc con người và 3 công cụ trí tuệ nhân tạo (ChatGPT, DALL-E, Canva AI) nhằm tối ưu hóa 75% tốc độ sản xuất nội dung số.
-                            </p>
+                                Sứ mệnh cá nhân là thử nghiệm và khai thác năng lực phối hợp đồng sáng tạo thông minh giữa bộ óc con người và 3 công cụ trí tuệ nhân tạo (ChatGPT, DALL-E, Canva AI) nhằm tối ưu hóa 75% tốc độ sản xuất nội dung số.</p>
                         </div>
                     </div>
                 `,
@@ -1133,7 +1128,7 @@
                                     Đức không chỉ nổi tiếng với nền kinh tế phát triển hàng đầu châu Âu mà còn được biết đến rộng rãi nhờ nền văn hóa ẩm thực vô cùng phong phú và độc đáo. Đối với người dân quốc gia này, các món ăn không chỉ cung cấp nguồn năng lượng dồi dào mà còn là một phần di sản văn hóa tinh thần gắn liền với các lễ hội truyền thống lớn.
                                 </p>
                                 <p>
-                                    Đặc điểm nổi trội nhất của ẩm thực Đức chính là sự đậm đà, giàu chất dinh dưỡng với nguyên liệu chủ đạo gồm thịt heo, bánh mì và khoai tây. Mỗi phân vùng địa lý lại sở hữu những món đặc sản đặc trưng riêng biệt.
+                                    Đặc điểm nổi trội nhất của ẩm thực Đức chính là sự đậm đà, giàu chất dinh dưỡng với nguyên liệu chủ đạo gồm thịt heo, bánh mì và khoai tây. Mỗi phân vùng địa lý lại sở hữu những món đặc đặc trưng riêng biệt.
                                 </p>
                                 <p>
                                     Một số món ăn biểu tượng làm nên tên tuổi ẩm thực Đức trên bản đồ thế giới bao gồm: 
@@ -1175,7 +1170,7 @@
                         </div>
                         <div class="p-4 bg-white/5 rounded-xl border border-white/10">
                             <h4 class="font-bold text-[#abc7eb] text-xs uppercase tracking-wider mb-2"><i class="fa-solid fa-lightbulb"></i> Bài học cốt lõi</h4>
-                            <p>Giá trị của việc học tập chân chính không nằm ở tốc độ hoàn thành bài luận bằng phím tắt, mà nằm ở sự chuyển hóa kiến thức sâu sắc trong não bộ học viên qua quá trình nghiên cứu độc lập nghiêm túc.</p>
+                            <p>Sự tiến bộ trong học tập đến từ quá trình tự thân nghiên cứu và viết lách. Sử dụng AI có trách nhiệm giúp bảo vệ uy tín học thuật cá nhân và duy trì động lực học tập bền vững.</p>
                         </div>
                     </div>
                 `
