@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phạm Huyền Trang - Digital Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts hỗ trợ tiếng Việt chuẩn học thuật -->
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Google Fonts hỗ trợ tiếng Việt chuẩn hóa và hiển thị sắc nét -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         body {
-            font-family: 'Be Vietnam Pro', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: #170308;
             background-image: linear-gradient(135deg, rgba(28, 4, 10, 0.97) 0%, rgba(13, 1, 4, 0.99) 100%), url('back.jpg');
             background-size: cover;
@@ -24,19 +24,10 @@
         }
 
         h1, h2, h3, .font-serif {
-            font-family: 'Lora', serif;
+            font-family: 'Playfair Display', Georgia, serif;
         }
 
-        /* Triệt để triệt tiêu lỗi tách dấu tiếng Việt do letter-spacing của Tailwind */
-        body, p, span, div, h1, h2, h3, h4, h5, h6, td, th, li, a, button {
-            letter-spacing: normal !important;
-            word-spacing: normal !important;
-            text-rendering: optimizeLegibility !important;
-            -webkit-font-smoothing: antialiased !important;
-            -moz-osx-font-smoothing: grayscale !important;
-        }
-
-        /* Custom Scrollbar */
+        /* Tối ưu hóa thanh cuộn */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -60,7 +51,7 @@
         }
 
         .glass-card {
-            background: rgba(23, 3, 8, 0.7);
+            background: rgba(23, 3, 8, 0.75);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(171, 199, 235, 0.1);
@@ -73,7 +64,7 @@
             transform: translateY(-6px);
         }
 
-        /* Float animation cho các vì sao */
+        /* Sao lấp lánh nền */
         @keyframes floatSlow {
             0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 0.45; }
             50% { transform: translateY(-15px) rotate(180deg) scale(1.1); opacity: 0.9; }
@@ -104,7 +95,7 @@
 </head>
 <body class="selection:bg-[#abc7eb] selection:text-[#170308]">
 
-    <!-- Canvas sinh hạt ánh sáng phát sáng bám theo chuột -->
+    <!-- Canvas vẽ vệt sao bám theo chuột -->
     <canvas id="trail-canvas"></canvas>
 
     <!-- Thanh tiến trình đọc trên cùng -->
@@ -112,18 +103,18 @@
         <div id="scroll-progress" class="h-full bg-gradient-to-r from-[#abc7eb] via-[#d698a6] to-[#abc7eb] w-0 transition-all duration-75"></div>
     </div>
 
-    <!-- Background Stars Deco -->
+    <!-- Sao trang trí lơ lửng trên nền -->
     <div class="absolute top-24 left-6 text-xl floating-star" style="animation-delay: 0s;"><i class="fa-solid fa-star"></i></div>
     <div class="absolute top-96 right-12 text-sm floating-star" style="animation-delay: 1.5s;"><i class="fa-solid fa-star"></i></div>
     <div class="absolute bottom-40 left-1/4 text-lg floating-star" style="animation-delay: 3s;"><i class="fa-solid fa-star"></i></div>
     <div class="absolute top-[800px] left-14 text-sm floating-star" style="animation-delay: 0.8s;"><i class="fa-solid fa-star"></i></div>
     <div class="absolute top-[1800px] right-16 text-lg floating-star" style="animation-delay: 2.2s;"><i class="fa-solid fa-star"></i></div>
 
-    <!-- Header / Navigation -->
+    <!-- Header / Menu điều hướng -->
     <header class="sticky top-0 z-40 w-full px-6 py-4 transition-all duration-300" id="main-header">
         <div class="max-w-6xl mx-auto flex items-center justify-between">
             <a href="#" class="text-lg font-bold tracking-wider text-[#abc7eb] flex items-center gap-2">
-                <i class="fa-solid fa-wand-magic-sparkles text-sm"></i>
+                <i class="fa-solid fa-wand-magic-sparkles text-sm animate-pulse"></i>
                 HuyenTrang.
             </a>
             
@@ -137,13 +128,13 @@
                 </a>
             </nav>
 
-            <!-- Mobile Toggle -->
+            <!-- Mobile Menu Toggle -->
             <button class="md:hidden text-2xl focus:outline-none" id="menu-btn">
                 <i class="fa-solid fa-bars-staggered"></i>
             </button>
         </div>
 
-        <!-- Mobile Menu Panel -->
+        <!-- Mobile Menu -->
         <div class="hidden absolute top-full left-0 w-full glass-panel py-6 px-8 flex flex-col gap-4 text-center md:hidden" id="mobile-menu">
             <a href="#about" class="hover:text-[#abc7eb] py-2 text-sm transition" onclick="toggleMenu()">Giới thiệu</a>
             <a href="#projects" class="hover:text-[#abc7eb] py-2 text-sm transition" onclick="toggleMenu()">Hành trình số</a>
@@ -154,13 +145,13 @@
         </div>
     </header>
 
-    <!-- Hero / About Section -->
+    <!-- Giới thiệu bản thân & Mục tiêu thiết lập Portfolio -->
     <section id="about" class="max-w-6xl mx-auto px-6 py-12 min-h-[85vh] flex flex-col justify-center">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             
-            <!-- Student Portrait -->
+            <!-- Ảnh Chân Dung -->
             <div class="md:col-span-5 flex justify-center order-2 md:order-1 relative">
-                <div class="absolute -top-4 -left-4 text-2xl floating-star"><i class="fa-solid fa-wand-magic"></i></div>
+                <div class="absolute -top-4 -left-4 text-2xl floating-star"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                 <div class="relative group">
                     <img src="Hình 1.jpg" alt="Phạm Huyền Trang" class="w-60 h-60 md:w-72 md:h-72 object-cover rounded-3xl avatar-glow transform group-hover:scale-105 transition duration-500">
                     <div class="absolute -bottom-3 -right-3 glass-panel py-1.5 px-3 rounded-full text-[10px] text-[#abc7eb] border border-[#abc7eb]/20 flex items-center gap-2">
@@ -169,10 +160,10 @@
                 </div>
             </div>
 
-            <!-- Profile Info & Objectives -->
+            <!-- Nội dung giới thiệu & Mục tiêu -->
             <div class="md:col-span-7 space-y-6 order-1 md:order-2">
                 <span class="text-[10px] uppercase tracking-widest text-[#abc7eb] bg-[#abc7eb]/10 px-2.5 py-1 rounded-full border border-[#abc7eb]/20 font-bold inline-block">
-                    Hồ sơ kỹ năng số
+                    Hồ sơ kỹ năng số cá nhân
                 </span>
                 <h1 class="text-3xl md:text-5xl font-bold leading-tight">
                     Xin chào, mình là <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#abc7eb] to-[#ebd3da]">Phạm Huyền Trang</span>
@@ -182,22 +173,22 @@
                     Portfolio này được xây dựng để tổng hợp, lưu trữ, và minh chứng toàn bộ năng lực sử dụng công nghệ số và ứng dụng trí tuệ nhân tạo (AI) mà mình đã trải qua trong khóa học.
                 </p>
 
-                <!-- Detailed Objectives -->
+                <!-- Mục tiêu chi tiết -->
                 <div class="glass-panel p-5 rounded-2xl border border-[#abc7eb]/15 space-y-3">
                     <h3 class="text-xs font-bold text-[#abc7eb] uppercase tracking-wider flex items-center gap-2">
-                        <i class="fa-solid fa-bullseye text-sm"></i> Mục tiêu thiết lập Portfolio cá nhân
+                        <i class="fa-solid fa-bullseye text-sm"></i> Mục tiêu thiết lập Portfolio
                     </h3>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-[11px] text-[#ebd3da]/75 leading-relaxed">
                         <div class="p-3 bg-white/5 rounded-lg border border-white/5 space-y-1">
-                            <span class="font-bold text-[#abc7eb]">Hệ thống hóa</span>
+                            <span class="font-bold text-white uppercase text-[10px]">1. Hệ thống hóa</span>
                             <p>Tự đánh giá, đúc kết sự tiến bộ cá nhân qua từng chương học thực tế.</p>
                         </div>
                         <div class="p-3 bg-white/5 rounded-lg border border-white/5 space-y-1">
-                            <span class="font-bold text-[#abc7eb]">Công cụ lưu trữ</span>
-                            <p>Tạo kho lưu trữ sản phẩm trung tâm để chia sẻ nhanh chóng với thầy cô và nhà tuyển dụng.</p>
+                            <span class="font-bold text-white uppercase text-[10px]">2. Lưu trữ lâu dài</span>
+                            <p>Tạo kho lưu trữ sản phẩm để chia sẻ với giảng viên và nhà tuyển dụng.</p>
                         </div>
                         <div class="p-3 bg-white/5 rounded-lg border border-white/5 space-y-1">
-                            <span class="font-bold text-[#abc7eb]">Minh chứng số</span>
+                            <span class="font-bold text-white uppercase text-[10px]">3. Minh chứng số</span>
                             <p>Thể hiện tư duy làm việc khoa học, biết kết hợp công nghệ và đạo đức học thuật.</p>
                         </div>
                     </div>
@@ -207,7 +198,7 @@
         </div>
     </section>
 
-    <!-- Google Drive Access Action Banner -->
+    <!-- Google Drive Action Banner -->
     <section class="max-w-6xl mx-auto px-6 mb-12">
         <div class="glass-panel p-6 rounded-3xl relative overflow-hidden flex flex-col sm:flex-row items-center justify-between gap-6 border border-[#abc7eb]/20">
             <div class="absolute -right-16 -bottom-16 w-36 h-36 rounded-full bg-[#abc7eb]/5 blur-2xl"></div>
@@ -223,7 +214,7 @@
         </div>
     </section>
 
-    <!-- Projects Grid Section -->
+    <!-- Sáu Bài Tập Lớn -->
     <section id="projects" class="max-w-6xl mx-auto px-6 py-8">
         <div class="text-center space-y-2 mb-10">
             <h2 class="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#abc7eb] to-[#ebd3da]">Danh Mục Bài Tập Đã Hoàn Thành</h2>
@@ -337,7 +328,7 @@
         </div>
     </section>
 
-    <!-- General Reflections & Project Evaluation -->
+    <!-- Tổng Kết Toàn Diện Chặng Đường Số -->
     <section id="reflection" class="max-w-4xl mx-auto px-6 py-12">
         <div class="glass-panel p-8 md:p-10 rounded-3xl space-y-8 relative overflow-hidden">
             <div class="absolute -right-24 -top-24 w-48 h-48 rounded-full bg-[#abc7eb]/5 blur-3xl"></div>
@@ -394,7 +385,7 @@
     </footer>
 
     <!-- Interactive Custom Modal -->
-    <div id="project-modal" class="fixed inset-0 z-50 hidden bg-[#0d0104]/90 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
+    <div id="project-modal" class="fixed inset-0 z-50 hidden bg-[#0d0104]/90 backdrop-blur-md flex items-center justify-center p-4">
         <div class="glass-panel w-full max-w-4xl h-[90vh] rounded-3xl overflow-hidden shadow-2xl flex flex-col transform scale-95 opacity-0 transition-all duration-300" id="modal-content">
             
             <!-- Modal Header -->
@@ -406,14 +397,14 @@
             </div>
 
             <!-- Modal Sub-Tabs Navigation -->
-            <div class="flex border-b border-[#abc7eb]/10 bg-black/30 px-4">
-                <button onclick="switchTab('tab-objectives')" id="btn-tab-objectives" class="px-4 py-3 text-xs font-semibold border-b-2 border-transparent hover:text-white text-[#abc7eb] transition focus:outline-none">
+            <div class="flex border-b border-[#abc7eb]/10 bg-black/30 px-4 font-semibold">
+                <button onclick="switchTab('tab-objectives')" id="btn-tab-objectives" class="px-4 py-3 text-xs border-b-2 border-transparent hover:text-white text-[#abc7eb] transition focus:outline-none">
                     <i class="fa-solid fa-bullseye mr-1.5"></i> Mục tiêu & Lập kế hoạch
                 </button>
-                <button onclick="switchTab('tab-details')" id="btn-tab-details" class="px-4 py-3 text-xs font-semibold border-b-2 border-transparent hover:text-white text-[#ebd3da]/70 transition focus:outline-none">
+                <button onclick="switchTab('tab-details')" id="btn-tab-details" class="px-4 py-3 text-xs border-b-2 border-transparent hover:text-white text-[#ebd3da]/70 transition focus:outline-none">
                     <i class="fa-solid fa-circle-nodes mr-1.5"></i> Thực tế & Minh họa trực quan
                 </button>
-                <button onclick="switchTab('tab-reflection')" id="btn-tab-reflection" class="px-4 py-3 text-xs font-semibold border-b-2 border-transparent hover:text-white text-[#ebd3da]/70 transition focus:outline-none">
+                <button onclick="switchTab('tab-reflection')" id="btn-tab-reflection" class="px-4 py-3 text-xs border-b-2 border-transparent hover:text-white text-[#ebd3da]/70 transition focus:outline-none">
                     <i class="fa-solid fa-graduation-cap mr-1.5"></i> Khó khăn & Bài học
                 </button>
             </div>
@@ -535,7 +526,7 @@
             mobileMenu.classList.add('hidden');
         }
 
-        // --- COMPREHENSIVE REPORTS DATA (Absolutely detailed, Visual diagrams mapped out) ---
+        // --- COMPREHENSIVE REPORTS DATA (Fully normalized NFC Vietnamese text) ---
         const reportsData = {
             1: {
                 badge: "Bài tập 1 (Bài tập 1 của mục 1.4)",
@@ -587,7 +578,7 @@
                             </div>
                         </div>
 
-                        <!-- Beautiful CSS Starry Tree Diagram -->
+                        <!-- Sơ đồ cấu trúc thư mục -->
                         <div class="space-y-3">
                             <h4 class="font-bold text-[#abc7eb] text-xs uppercase tracking-wider"><i class="fa-solid fa-sitemap"></i> Sơ đồ trực quan hóa cấu trúc thư mục thực hành:</h4>
                             <div class="p-6 bg-[#250812] rounded-2xl border border-[#abc7eb]/15 font-mono text-[11px] text-[#ebd3da]/90 space-y-3 shadow-inner">
@@ -632,7 +623,7 @@
                         </div>
                         <div class="p-4 bg-white/5 rounded-xl border border-white/10">
                             <h4 class="font-bold text-[#abc7eb] text-xs uppercase tracking-wider mb-2"><i class="fa-solid fa-lightbulb"></i> Bài học tích lũy</h4>
-                            <p>Tổ chức lưu trữ dữ liệu khoa học ngay từ bước đầu tiên giúp tiết kiệm thời gian tìm kiếm tài liệu đáng kể. Một cây thư mục khoa học giúp cải thiện hiệu suất nghiên cứu từ ngữ và tài liệu lên gấp nhiều lần.</p>
+                            <p>Tổ chức lưu trữ dữ liệu khoa học ngay từ bước đầu tiên giúp tiết kiệm thời gian tìm kiếm tài liệu đáng kể. Một chiếc máy tính gọn gàng là nền tảng của một tư duy học tập có tổ chức.</p>
                         </div>
                     </div>
                 `
@@ -660,116 +651,116 @@
                             <table class="w-full text-left text-[10px] border-collapse bg-white/5 rounded-lg overflow-hidden">
                                 <thead>
                                     <tr class="bg-[#abc7eb]/15 text-[#abc7eb] border-b border-white/10">
-                                        <th class="p-2">STT</th>
-                                        <th class="p-2">Tác phẩm tham khảo</th>
-                                        <th class="p-2">Tác giả</th>
-                                        <th class="p-2">NXB / Tạp chí</th>
-                                        <th class="p-2">Phương pháp</th>
-                                        <th class="p-2">Trích dẫn</th>
-                                        <th class="p-2">Cập nhật</th>
-                                        <th class="p-2">Độ tin cậy</th>
+                                        <th class="p-2.5">STT</th>
+                                        <th class="p-2.5">Tác phẩm tham khảo</th>
+                                        <th class="p-2.5">Tác giả</th>
+                                        <th class="p-2.5">NXB / Tạp chí</th>
+                                        <th class="p-2.5">Phương pháp</th>
+                                        <th class="p-2.5">Trích dẫn</th>
+                                        <th class="p-2.5">Cập nhật</th>
+                                        <th class="p-2.5">Độ tin cậy</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-white/5 text-[#ebd3da]/80">
                                     <tr>
-                                        <td class="p-2 font-bold">1</td>
-                                        <td class="p-2 font-semibold text-white">Nation (2001)</td>
-                                        <td class="p-2">Chuyên gia</td>
-                                        <td class="p-2">Cambridge</td>
-                                        <td class="p-2">Nghiên cứu khoa học</td>
-                                        <td class="p-2">Cao</td>
-                                        <td class="p-2">Trung bình</td>
-                                        <td class="p-2 text-green-300 font-bold">5 / 5</td>
+                                        <td class="p-2.5">1</td>
+                                        <td class="p-2.5 font-semibold text-white">Nation (2001)</td>
+                                        <td class="p-2.5">Chuyên gia</td>
+                                        <td class="p-2.5">Cambridge</td>
+                                        <td class="p-2.5">Nghiên cứu khoa học</td>
+                                        <td class="p-2.5">Cao</td>
+                                        <td class="p-2.5">Trung bình</td>
+                                        <td class="p-2.5 text-green-300 font-bold">5 / 5</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-2 font-bold">2</td>
-                                        <td class="p-2 font-semibold text-white">Schmitt (2000)</td>
-                                        <td class="p-2">Chuyên gia</td>
-                                        <td class="p-2">Cambridge</td>
-                                        <td class="p-2">Tổng hợp lý thuyết</td>
-                                        <td class="p-2">Cao</td>
-                                        <td class="p-2">Trung bình</td>
-                                        <td class="p-2 text-green-300 font-bold">5 / 5</td>
+                                        <td class="p-2.5">2</td>
+                                        <td class="p-2.5 font-semibold text-white">Schmitt (2000)</td>
+                                        <td class="p-2.5">Chuyên gia</td>
+                                        <td class="p-2.5">Cambridge</td>
+                                        <td class="p-2.5">Tổng hợp lý thuyết</td>
+                                        <td class="p-2.5">Cao</td>
+                                        <td class="p-2.5">Trung bình</td>
+                                        <td class="p-2.5 text-green-300 font-bold">5 / 5</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-2 font-bold">3</td>
-                                        <td class="p-2 font-semibold text-white">Webb (2007)</td>
-                                        <td class="p-2">Học giả</td>
-                                        <td class="p-2">Applied Linguistics</td>
-                                        <td class="p-2">Thực nghiệm lâm sàng</td>
-                                        <td class="p-2">Cao</td>
-                                        <td class="p-2">Tốt</td>
-                                        <td class="p-2 text-green-300 font-bold">5 / 5</td>
+                                        <td class="p-2.5">3</td>
+                                        <td class="p-2.5 font-semibold text-white">Webb (2007)</td>
+                                        <td class="p-2.5">Học giả</td>
+                                        <td class="p-2.5">Applied Linguistics</td>
+                                        <td class="p-2.5">Thực nghiệm lâm sàng</td>
+                                        <td class="p-2.5">Cao</td>
+                                        <td class="p-2.5">Tốt</td>
+                                        <td class="p-2.5 text-green-300 font-bold">5 / 5</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-2 font-bold">4</td>
-                                        <td class="p-2 font-semibold text-white">Hulstijn (2001)</td>
-                                        <td class="p-2">Học giả</td>
-                                        <td class="p-2">Language Learning</td>
-                                        <td class="p-2">Nghiên cứu lý thuyết</td>
-                                        <td class="p-2">Cao</td>
-                                        <td class="p-2">Trung bình</td>
-                                        <td class="p-2 text-green-300 font-bold">4 / 5</td>
+                                        <td class="p-2.5">4</td>
+                                        <td class="p-2.5 font-semibold text-white">Hulstijn (2001)</td>
+                                        <td class="p-2.5">Học giả</td>
+                                        <td class="p-2.5">Language Learning</td>
+                                        <td class="p-2.5">Nghiên cứu lý thuyết</td>
+                                        <td class="p-2.5">Cao</td>
+                                        <td class="p-2.5">Trung bình</td>
+                                        <td class="p-2.5 text-green-300 font-bold">4 / 5</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-2 font-bold">5</td>
-                                        <td class="p-2 font-semibold text-white">Laufer (2001)</td>
-                                        <td class="p-2">Học giả</td>
-                                        <td class="p-2">Applied Linguistics</td>
-                                        <td class="p-2">Thực nghiệm lâm sàng</td>
-                                        <td class="p-2">Cao</td>
-                                        <td class="p-2">Tốt</td>
-                                        <td class="p-2 text-green-300 font-bold">5 / 5</td>
+                                        <td class="p-2.5">5</td>
+                                        <td class="p-2.5 font-semibold text-white">Laufer (2001)</td>
+                                        <td class="p-2.5">Học giả</td>
+                                        <td class="p-2.5">Applied Linguistics</td>
+                                        <td class="p-2.5">Thực nghiệm lâm sàng</td>
+                                        <td class="p-2.5">Cao</td>
+                                        <td class="p-2.5">Tốt</td>
+                                        <td class="p-2.5 text-green-300 font-bold">5 / 5</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-2 font-bold">6</td>
-                                        <td class="p-2 font-semibold text-white">Thornbury (2002)</td>
-                                        <td class="p-2">Giảng viên</td>
-                                        <td class="p-2">Longman</td>
-                                        <td class="p-2">Hướng dẫn giảng dạy</td>
-                                        <td class="p-2">Trung bình</td>
-                                        <td class="p-2">Trung bình</td>
-                                        <td class="p-2 text-green-300 font-bold">4 / 5</td>
+                                        <td class="p-2.5">6</td>
+                                        <td class="p-2.5 font-semibold text-white">Thornbury (2002)</td>
+                                        <td class="p-2.5">Giảng viên</td>
+                                        <td class="p-2.5">Longman</td>
+                                        <td class="p-2.5">Hướng dẫn giảng dạy</td>
+                                        <td class="p-2.5">Trung bình</td>
+                                        <td class="p-2.5">Trung bình</td>
+                                        <td class="p-2.5 text-green-300 font-bold">4 / 5</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-2 font-bold">7</td>
-                                        <td class="p-2 font-semibold text-white">Nation (2013)</td>
-                                        <td class="p-2">Chuyên gia</td>
-                                        <td class="p-2">Cambridge</td>
-                                        <td class="p-2">Tổng kết chuyên sâu</td>
-                                        <td class="p-2">Cao</td>
-                                        <td class="p-2">Mới</td>
-                                        <td class="p-2 text-green-300 font-bold">5 / 5</td>
+                                        <td class="p-2.5">7</td>
+                                        <td class="p-2.5 font-semibold text-white">Nation (2013)</td>
+                                        <td class="p-2.5">Chuyên gia</td>
+                                        <td class="p-2.5">Cambridge</td>
+                                        <td class="p-2.5">Tổng kết chuyên sâu</td>
+                                        <td class="p-2.5">Cao</td>
+                                        <td class="p-2.5">Mới</td>
+                                        <td class="p-2.5 text-green-300 font-bold">5 / 5</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-2 font-bold">8</td>
-                                        <td class="p-2 font-semibold text-white">Webb & Nation (2017)</td>
-                                        <td class="p-2">Chuyên gia</td>
-                                        <td class="p-2">Oxford</td>
-                                        <td class="p-2">Nghiên cứu cập nhật</td>
-                                        <td class="p-2">Cao</td>
-                                        <td class="p-2">Mới</td>
-                                        <td class="p-2 text-green-300 font-bold">5 / 5</td>
+                                        <td class="p-2.5">8</td>
+                                        <td class="p-2.5 font-semibold text-white">Webb & Nation (2017)</td>
+                                        <td class="p-2.5">Chuyên gia</td>
+                                        <td class="p-2.5">Oxford</td>
+                                        <td class="p-2.5">Nghiên cứu cập nhật</td>
+                                        <td class="p-2.5">Cao</td>
+                                        <td class="p-2.5">Mới</td>
+                                        <td class="p-2.5 text-green-300 font-bold">5 / 5</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-2 font-bold">9</td>
-                                        <td class="p-2 font-semibold text-white">Schmitt (2008)</td>
-                                        <td class="p-2">Học giả</td>
-                                        <td class="p-2">Language Teaching Research</td>
-                                        <td class="p-2">Tổng hợp lý luận</td>
-                                        <td class="p-2">Cao</td>
-                                        <td class="p-2">Tốt</td>
-                                        <td class="p-2 text-green-300 font-bold">5 / 5</td>
+                                        <td class="p-2.5">9</td>
+                                        <td class="p-2.5 font-semibold text-white">Schmitt (2008)</td>
+                                        <td class="p-2.5">Học giả</td>
+                                        <td class="p-2.5">Language Teaching Research</td>
+                                        <td class="p-2.5">Tổng hợp lý luận</td>
+                                        <td class="p-2.5">Cao</td>
+                                        <td class="p-2.5">Tốt</td>
+                                        <td class="p-2.5 text-green-300 font-bold">5 / 5</td>
                                     </tr>
                                     <tr>
-                                        <td class="p-2 font-bold">10</td>
-                                        <td class="p-2 font-semibold text-white">Folse (2004)</td>
-                                        <td class="p-2">Giảng viên</td>
-                                        <td class="p-2">Michigan Press</td>
-                                        <td class="p-2">Phân tích sai lầm</td>
-                                        <td class="p-2">Trung bình</td>
-                                        <td class="p-2">Trung bình</td>
-                                        <td class="p-2 text-green-300 font-bold">4 / 5</td>
+                                        <td class="p-2.5">10</td>
+                                        <td class="p-2.5 font-semibold text-white">Folse (2004)</td>
+                                        <td class="p-2.5">Giảng viên</td>
+                                        <td class="p-2.5">Michigan Press</td>
+                                        <td class="p-2.5">Phân tích sai lầm</td>
+                                        <td class="p-2.5">Trung bình</td>
+                                        <td class="p-2.5">Trung bình</td>
+                                        <td class="p-2.5 text-green-300 font-bold">4 / 5</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -815,7 +806,7 @@
                             
                             <!-- Tác vụ 1 -->
                             <div class="p-4 bg-white/5 rounded-xl border border-[#abc7eb]/20 space-y-3">
-                                <span class="text-[10px] font-bold text-[#abc7eb] uppercase bg-[#abc7eb]/10 px-2 py-0.5 rounded">Tác vụ 1: Tóm tắt bài đọc học thuật về quản lý nước đô thị (Danish/Copenhagen)</span>
+                                <span class="text-[10px] font-bold text-[#abc7eb] uppercase bg-[#abc7eb]/10 px-2 py-0.5 rounded">Tác vụ 1: Tóm tắt bài đọc đô thị Đan Mạch / Cape Town</span>
                                 <div class="bg-black/30 p-3 rounded-lg font-mono text-[9px] text-[#ebd3da]/60">
                                     "Confronting the fragility of urban water systems, a new report released prior to the International Water Association's World Water Congress articulates a necessary evolution in municipal strategy. Drawing on case studies from Danish municipalities to global hubs like Cape Town, the findings advocate for dismantling the siloed approach to water management..."
                                 </div>
@@ -840,7 +831,7 @@
 
                             <!-- Tác vụ 2 -->
                             <div class="p-4 bg-white/5 rounded-xl border border-[#abc7eb]/20 space-y-3">
-                                <span class="text-[10px] font-bold text-[#abc7eb] uppercase bg-[#abc7eb]/10 px-2 py-0.5 rounded">Tác vụ 2: Giải thích khái niệm phức tạp ("Environmental Injustice" / "Brownwashing")</span>
+                                <span class="text-[10px] font-bold text-[#abc7eb] uppercase bg-[#abc7eb]/10 px-2 py-0.5 rounded">Tác vụ 2: Giải thích khái niệm "Environmental Injustice" / "Brownwashing"</span>
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-[11px]">
                                     <div class="p-2 bg-red-900/10 rounded border border-red-500/20">
                                         <p class="font-bold text-red-300">Prompt Cơ bản</p>
@@ -954,7 +945,7 @@
                             </h4>
                             <p class="text-[11px] text-[#ebd3da]/80 leading-relaxed">
                                 Đề tài nhóm: <strong class="text-[#abc7eb]">"Fast Fashion ảnh hưởng thế nào đến thói quen chi tiêu của sinh viên QH2025 khoa Đức ULIS"</strong>. 
-                                Dự án nhóm gồm 7 thành viên. Sứ mệnh của mình là ứng dụng và phối hợp nhuần nhuyễn bộ công cụ Google Workspace (Sheets, Docs, Forms) và Zalo để quản lý, cộng tác viết bài báo cáo, khảo sát đạt <strong class="text-white">67 sinh viên thực tế</strong>.
+                                Dự án nhóm gồm 7 thành viên. Sứ mệnh của mình là ứng dụng và phối hợp nhuần nhuyễn bộ công cụ Google Workspace (Sheets, Docs, Forms) và Zalo để quản lý, cộng tác viết bài báo cáo, khảo sát đạt <strong class="text-white">67 sinh viên phản hồi thực tế</strong>.
                             </p>
                         </div>
                     </div>
@@ -1048,7 +1039,7 @@
                             </h4>
                             <p class="text-[11px] text-[#ebd3da]/80 leading-relaxed">
                                 Đề tài dự án: <strong class="text-[#abc7eb]">Thiết kế Infographic "Vai trò của AI trong giáo dục"</strong>. 
-                                Sứ mệnh cá nhân là thử nghiệm và khai thác năng lực phối hợp đồng sáng tạo thông minh giữa bộ óc con người và 3 công cụ trí tuệ nhân tạo (ChatGPT, DALL-E, Canva AI) nhằm tối ưu hóa 75% tốc độ sản xuất nội dung số.
+                                Sứ mệnh cá nhân là thử nghiệm và khai thác năng lực phối hợp đồng sáng tạo thông minh giữa bộ óc con người và 3 công cụ GenAI hàng đầu (ChatGPT, DALL-E, Canva AI) nhằm tối ưu hóa 75% tốc độ sản xuất nội dung số.
                             </p>
                         </div>
                     </div>
@@ -1111,7 +1102,7 @@
                         </div>
                         <div class="p-4 bg-white/5 rounded-xl border border-white/10">
                             <h4 class="font-bold text-[#abc7eb] text-xs uppercase tracking-wider mb-2"><i class="fa-solid fa-lightbulb"></i> Bài học cốt lõi</h4>
-                            <p>Máy móc là một trợ thủ đắc lực giúp giải phóng sức lao động ở khâu chuẩn bị phác thảo, nhưng tư duy thẩm mỹ sắc sảo, sự chọn lọc chuẩn mực và tính cá nhân hóa của con người mới là yếu tố quyết định tạo nên linh hồn cho tác phẩm truyền thông số.</p>
+                            <p>Máy móc là một trợ thủ đắc lực giúp giải phóng sức lao động ở khâu chuẩn bị phác thảo, nhưng tư duy thẩm mỹ sắc sảo, sự chọn lọc chuẩn mực và tính cá nhân hóa của con người mới là yếu tố quyết định tạo nên linh hồn cho sản phẩm truyền thông số.</p>
                         </div>
                     </div>
                 `
@@ -1163,7 +1154,7 @@
                         <div class="p-5 bg-[#1a0208] rounded-2xl border border-[#abc7eb]/20 space-y-3 shadow-inner">
                             <h4 class="font-bold text-[#abc7eb] text-xs uppercase tracking-wider flex items-center gap-2"><i class="fa-solid fa-gavel"></i> Bộ 6 nguyên tắc đạo đức số cá nhân:</h4>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[11px] text-[#ebd3da]/80 leading-relaxed">
-                                <p><strong class="text-white">1. Đồng hành thông minh:</strong> Chỉ sử dụng AI làm trợ lý phác thảo ý tưởng và thiết kế dàn bài luận ban đầu.</p>
+                                <p><strong class="text-white">1. Đồng hành thông minh:</strong> Chỉ sử dụng AI làm trợ lý phác thảo ý tưởng và thiết kế bài luận ban đầu.</p>
                                 <p><strong class="text-white">2. Thẩm định độc lập:</strong> Luôn kiểm chứng tính chính xác của các nhận định văn hóa, lịch sử do AI cung cấp.</p>
                                 <p><strong class="text-white">3. Tuyên chiến đạo văn:</strong> Tuyệt đối không sao chép nguyên vẹn 100% văn bản máy móc tạo ra để nộp trực tiếp.</p>
                                 <p><strong class="text-white">4. Minh bạch xuất xứ:</strong> Ghi nhận và trích nguồn rõ ràng khi có sự tham khảo gợi ý từ mô hình ngôn ngữ lớn.</p>
@@ -1214,9 +1205,6 @@
                 // Reset về tab đầu tiên
                 switchTab('tab-objectives');
 
-                // Chạy hàm chuẩn hóa văn bản tổ hợp NFC ngay khi render dữ liệu vào DOM
-                normalizeVietnameseText(document.getElementById('modal-body-container'));
-
                 modal.classList.remove('hidden');
                 setTimeout(() => {
                     modalContent.classList.remove('scale-95', 'opacity-0');
@@ -1259,24 +1247,6 @@
                 }
             });
         }
-
-        // --- HÀM CHUẨN HÓA TOÀN BỘ CHỮ SANG UNICODE TỔ HỢP (NFC) ---
-        // Hàm đệ quy duyệt qua các Text Nodes trong DOM và ép về định dạng NFC chuẩn
-        // Giúp khắc phục triệt để lỗi tách dấu của trình duyệt khi gặp văn bản Copy từ PDF/macOS.
-        function normalizeVietnameseText(node) {
-            if (node.nodeType === Node.TEXT_NODE) {
-                node.nodeValue = node.nodeValue.normalize('NFC');
-            } else {
-                for (let child of node.childNodes) {
-                    normalizeVietnameseText(child);
-                }
-            }
-        }
-
-        // Chạy chuẩn hóa tự động toàn bộ trang web khi tải xong
-        document.addEventListener("DOMContentLoaded", () => {
-            normalizeVietnameseText(document.body);
-        });
     </script>
 </body>
 </html>
